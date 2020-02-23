@@ -4,6 +4,8 @@ import Footer from '../components/Footer';
 import Head from "next/head";
 import {getBlogBySlug} from '../actions';
 import { Container } from 'react-bootstrap';
+import parse from 'html-react-parser';
+
 class About extends Component {
   static async getInitialProps({query}) {
     let blog = {};
@@ -15,14 +17,35 @@ class About extends Component {
     }
     return {blog}
   }
+
+
   render() {
+    // progress in forward
+    const stringParse = (stringP) => {
+      let string = stringP;
+      let stringTotal = "";
+      while (string.indexOf(',')!==-1) {
+        let indexOfComma = string.indexOf(',');
+        if(string.charAt(indexOfComma-1 === '>') && string.charAt(indexOfComma-+1 === '<')){
+          stringTotal += string.substring(0, indexOfComma);
+          string = string.substring(indexOfComma+1);
+        }
+
+      }
+      stringTotal += string;
+      return stringTotal;
+    }
     const {blog} = this.props;
+    const parsedString =stringParse(blog.story);
+    console.log(blog.story);
+    console.log(parsedString);
 
     return (
       <div>
         <Header isAuthenticated={this.props.auth.isAuthenticated} image={"../header2.jpg"}/>
           <Container>
-          <div dangerouslySetInnerHTML={{__html: blog.story}}></div>
+          <div dangerouslySetInnerHTML={{__html: parsedString}}></div>
+
           </Container>
           <Footer/>
           <div>

@@ -145,8 +145,9 @@ const SlateEditor = (props) => {
     return <Leaf {...props} />
   }, [])
   const { isLoading} = props;
-
+  const editorjs = props.initialValue ? deserialize((new DOMParser().parseFromString(props.initialValue, 'text/html')).body) : value;
   const valuevalue = props.initialValue ? deserialize((new DOMParser().parseFromString(props.initialValue, 'text/html')).body) : value;
+  console.log("editorjs ", editorjs)
   return (
     <Slate editor={editor} value={valuevalue} onChange={value => setValue(value)} onKeyDown={onKeyDown}>
       <ControlMenu isLoading={isLoading} save={save}></ControlMenu>
