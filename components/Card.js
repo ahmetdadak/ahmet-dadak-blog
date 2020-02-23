@@ -4,6 +4,23 @@ import moment from 'moment';
 
 class Card extends Component {
     render() {
+        // progress in forward
+
+        const stringParse = (stringP) => {
+            let string = stringP;
+            let stringTotal = "";
+            while (string.indexOf(',')!==-1) {
+              let indexOfComma = string.indexOf(',');
+              if(string.charAt(indexOfComma-1 === '>') && string.charAt(indexOfComma-+1 === '<')){
+                stringTotal += string.substring(0, indexOfComma);
+                string = string.substring(indexOfComma+1);
+              }
+
+            }
+            stringTotal += string;
+            return stringTotal;
+          }
+          const parsedString =stringParse(this.props.body);
         return (
             <div>
 
@@ -43,7 +60,9 @@ class Card extends Component {
                         </div> */}
                         </div>
                         <div className="card-article">
-                            {this.props.body}
+                            {/* {this.props.body} */}
+
+                            <div dangerouslySetInnerHTML={{__html: parsedString}}></div>
                         </div>
 
                     </div>
