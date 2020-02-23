@@ -23,7 +23,7 @@ class Index extends Component {
   render() {
     return (
       <div>
-      <Header user={this.props.auth.user} isAuthenticated={this.props.auth.isAuthenticated}/>
+      <Header user={this.props.auth.user} isAuthenticated={this.props.auth.isAuthenticated} image={"header2.jpg"}/>
       <div className="container">
         <BlogPost marginTop= "60px" width = "66%" className="blogPostmain" blogs={this.props.blogs}/>
         <SideBar marginTop= "60px" width = "29%" className = "sidebarmain"/>

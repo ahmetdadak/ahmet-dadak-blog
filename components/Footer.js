@@ -78,13 +78,13 @@ class Footer extends Component {
           </Nav.Link> */}
         </Nav>
 
-        <h5>
+        {/* <h5>
           Subscribe the email feed to get notification about latest posts
             </h5>
         <Form inline className="justify-content-center" style={{ paddingBottom: "50px" }}>
           <FormControl type="text" placeholder="Your email" className="mr-sm-2" />
           <Button variant="outline-primary">Subscribe</Button>
-        </Form>
+        </Form> */}
         <style jsx>{`
               .footer{
                 margin-top: 50px;

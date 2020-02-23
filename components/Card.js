@@ -15,26 +15,32 @@ class Card extends Component {
                     </div>
                     </a>
 
-</Link>
+                </Link>
                     <div className="card-info">
-
+                    <Link route = {this.props.route}>
+                            <a style ={{textDecoration: "none"}}>
                         <h4 className="card-entry-title" >
                             {this.props.title}
                         </h4>
+                        </a>
+
+                            </Link>
                         <div className="card-context-info">
                             <h6 className="card-context-date">{moment(this.props.date).format('LL')}</h6>
                             <div className="vl"/>
-
-                            <div className="card-feed">
+                            <span className="card-minute-read">
+                            {this.props.minute} min read
+                            </span>
+                            {/* <div className="card-feed">
                             <h6 className="card-feed-numbers-comment">120</h6>
                             <i className="fa fa-comment"/>
                             <h6 className="card-feed-numbers-heart">220</h6>
                             <i className="fa fa-heart"/>
                             <i className="fa fa-share-alt"/>
-                            </div>
-                            <div className="card-minute-read">
+                            </div> */}
+                            {/* <div className="card-minute-read">
                             {this.props.minute} min read
-                        </div>
+                        </div> */}
                         </div>
                         <div className="card-article">
                             {this.props.body}

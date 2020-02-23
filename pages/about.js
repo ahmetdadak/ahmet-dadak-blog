@@ -3,16 +3,30 @@ import Header from "../components/Header"
 import Link from "next/link"
 import Footer from '../components/Footer';
 import Head from "next/head";
+import { Container } from 'react-bootstrap';
 
 class About extends Component {
   render() {
     return (
       <div>
-        <Header isAuthenticated={this.props.auth.isAuthenticated}/>
-          <p>Hello, My name is Ahmet. I am a junior computer engineering student. Here, you can find my posts about my experiences.</p>
-          <Link href="/">
-            <a>Go home</a>
-          </Link>
+        <Header isAuthenticated={this.props.auth.isAuthenticated} image={"header2.jpg"}/>
+        <Container>
+        <div className="about">
+        {/* <div className="cardHeaderAbout">
+          <span>About Me</span>
+        </div> */}
+        <div className="profileImageContainer">
+          <img src="./2.jpg" />
+        </div>
+        <p className="aboutContext">
+          Hello. I am Ahmet Dadak. I am a junior computer
+          engineering student. I am currently working on
+          data science. I am excited to find an opportunity
+          to have an internship in that field. Here I write
+          about my thoughts about things in life.
+              </p>
+      </div>
+      </Container>
           <Footer/>
           <div>
         <Head>

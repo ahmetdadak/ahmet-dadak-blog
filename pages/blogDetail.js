@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import Footer from '../components/Footer';
 import Head from "next/head";
 import {getBlogBySlug} from '../actions';
+import { Container } from 'react-bootstrap';
 class About extends Component {
   static async getInitialProps({query}) {
     let blog = {};
@@ -19,8 +20,10 @@ class About extends Component {
 
     return (
       <div>
-        <Header isAuthenticated={this.props.auth.isAuthenticated}/>
+        <Header isAuthenticated={this.props.auth.isAuthenticated} image={"../header2.jpg"}/>
+          <Container>
           <div dangerouslySetInnerHTML={{__html: blog.story}}></div>
+          </Container>
           <Footer/>
           <div>
         <Head>

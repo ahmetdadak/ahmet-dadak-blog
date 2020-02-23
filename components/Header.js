@@ -12,7 +12,7 @@ export default class Header extends Component {
     }
 
     render() {
-        const { isAuthenticated,user } = this.props;
+        const { isAuthenticated,user,image} = this.props;
         return (
             <div className="cont">
                 <div className="title fixed-top">
@@ -34,11 +34,12 @@ export default class Header extends Component {
                     </ul>
                     </div>
                     <div className="head3">
-                    <SearchBar/>
+                    {/* <SearchBar/> */}
                     </div>
                 </div>
                 <div className="header-image-div">
-                    <img src = "header2.jpg" className="header-image"/>
+
+                    <img src = {image} className="header-image"/>
                     <div className="centered">Ahmet Dadak</div>
                 </div>
                 <div className="social"><SocialMediaIcons/></div>

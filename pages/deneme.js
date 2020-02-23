@@ -42,7 +42,7 @@ class BlogEditor extends Component {
     const {isSaving} = this.state;
     return (
       <div>
-        <Header isAuthenticated={this.props.auth.isAuthenticated}/>
+        <Header isAuthenticated={this.props.auth.isAuthenticated} image={"header2.jpg"}/>
           <div className="container">
           <SlateEditor isLoading={isSaving} save={this.saveBlog}/>
           </div>

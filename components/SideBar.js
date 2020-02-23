@@ -19,7 +19,7 @@ class SideBar extends Component {
           about my thoughts about things in life.
               </p>
       </div>
-      <div className="featured">
+      {/* <div className="featured">
         <div className="cardHeaderFeatured">
           <span >Featured</span>
         </div>
@@ -69,18 +69,18 @@ class SideBar extends Component {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
 
-      <div className="mc4wp-form-fields">
+      {/* <div className="mc4wp-form-fields">
       <div className="cardHeaderNewsletter">
           Newsletter Signup
         </div>
         <input type="email" name="EMAIL" placeholder="Your email address" required />
         <input className = "newsbutton" type="submit" value="Subscribe" />
-      </div>
-      <div  className="coffee">
+      </div> */}
+      {/* <div  className="coffee">
           <button className="coffeebutton"> Buy me a cup of coffee</button>
-      </div>
+      </div> */}
       <style jsx>{`
               .sidebarContainer{
 
